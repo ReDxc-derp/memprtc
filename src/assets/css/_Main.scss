@@ -1,0 +1,160 @@
+@import "_Variables.scss";
+
+body,
+a,
+p,
+h1,
+h2,
+h3,
+ul,
+ol,
+li,
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+div {
+  position: relative;
+}
+
+h1 {
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 70px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+a,
+button {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+a {
+  text-decoration: none;
+  margin-top: 1px;
+  border-bottom: 1px solid transparent;
+
+  &.link:hover,
+  &.link:active,
+  &.link:focus {
+    opacity: 0.8;
+  }
+}
+
+.link-btn {
+  width: fit-content;
+  z-index: 1;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 19px 51px;
+  color: $white !important;
+  background-color: $black;
+  border-radius: 6px;
+
+  &:hover {
+    color: $black !important;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -4em, 0);
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -4em, 0);
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transition: all 0.35s ease-in-out 0s;
+    -moz-transition: all 0.35s ease-in-out 0s;
+    -ms-transition: all 0.35s ease-in-out 0s;
+    -o-transition: all 0.35s ease-in-out 0s;
+    transition: all 0.35s ease-in-out 0s;
+  }
+
+  &:hover:before {
+    opacity: 1;
+    background-color: $white;
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+}
+
+/* Container */
+.wrapper {
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+.row {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+.column {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.jcfs {
+  justify-content: flex-start;
+}
+.jcc {
+  justify-content: center;
+}
+.aifs {
+  align-items: flex-start;
+}
+.aic {
+  align-items: center;
+}
+.ais {
+  align-items: stretch;
+}
+
+.latestrow {
+  font-family: $fontnoto;
+  margin-bottom: 30px;
+
+  & span {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
+  & a {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 27px;
+    opacity: 0.6;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 60px 0;
+  }
+}

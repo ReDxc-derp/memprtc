@@ -1,6 +1,4 @@
-$fontnoto: Noto Sans, sans-serif !important;
-$fontint: Inter, sans-serif !important;
-$fontpop: Poppins, sans-serif !important;
+@import "_Fonts.scss";
 
 $white: rgb(255, 255, 255);
 $lightgray: rgb(229, 229, 229);
@@ -17,3 +15,10 @@ $orange: rgb(230, 126, 34);
 $yellow: rgb(255, 232, 0);
 $magenta: rgb(228, 183, 240);
 $red: rgb(231, 76, 60);
+
+$backlight: $white;
+$backdark: rgb(39, 50, 62);
+
+$fontnoto: Noto Sans, sans-serif !important;
+$fontint: Inter, sans-serif !important;
+$fontpop: Poppins, sans-serif !important;

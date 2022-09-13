@@ -1,5 +1,5 @@
 <template>
-  <div id="SiteHeader">
+  <section id="SiteHeader">
     <div class="wrapper wrapper_header">
       <div class="row row_header">
         <a href="#" class="headerlogo">kek ReDxc memes</a>
@@ -8,25 +8,33 @@
           <a href="#" class="link">Articles</a>
           <a href="#" class="link">Projects</a>
           <div class="row aic nav-icons">
-            <a href="#">
-              <img class="exc" src="../assets/images/header/search.png" />
+            <a>
+              <div class="icon search exc"></div>
             </a>
-            <a href="#"><img src="../assets/images/header/mode.png" /></a>
+            <a @click="ThemeChange">
+              <div class="icon mode"></div>
+            </a>
           </div>
         </nav>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
   name: "SiteHeader",
+  methods: {
+    ThemeChange() {
+      this.isActive = !this.isActive;
+      this.$emit("themeChanged");
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/css/_Variables.scss";
+@import "../assets/css/_Main.scss";
 
 #SiteHeader {
   padding-top: 30px;
@@ -44,33 +52,41 @@ export default {
   line-height: 33px;
 }
 
-.nav_header a {
-  margin-right: 50px;
-
-  &:last-child {
-    margin-right: 0;
-  }
+.nav_header {
+  gap: 50px;
 }
 
 .nav-icons {
-  & img {
+  gap: 25px;
+
+  .icon {
     width: 26px;
     height: 26px;
-  }
+    background-color: $white;
 
-  .exc {
-    width: 24px;
-    height: 24px;
-  }
+    .exc {
+      width: 24px;
+      height: 24px;
+    }
 
-  & div {
-    display: flex;
-    margin-right: 25px;
+    &.search {
+      -webkit-mask: url("../assets/svgs/header/search.svg") no-repeat center;
+      mask: url("../assets/svgs/header/search.svg") no-repeat center;
+    }
 
-    &:last-child {
-      margin-right: 0;
+    &.mode {
+      -webkit-mask: url("../assets/svgs/header/mode.svg") no-repeat center;
+      mask: url("../assets/svgs/header/mode.svg") no-repeat center;
     }
   }
+
+  & a {
+    display: flex;
+  }
+}
+
+#app.light .nav-icons .icon {
+  background-color: $black;
 }
 
 @import "../assets/css/_Responsive.scss";

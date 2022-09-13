@@ -1,5 +1,5 @@
 <template>
-  <div id="SiteStart">
+  <section id="SiteStart">
     <div class="wrapper wrapper_sitestart">
       <div class="row aifs row_sitestart">
         <div class="sitestart-left">
@@ -18,45 +18,36 @@
           </div>
           <div class="sitestart__txt-wrap">
             <div class="sitestart-txt">
-              <span>Hi, I'm an eager<br />developer who <br />flutter around!</span>
+              <span>
+                Hi, I'm an eager<br />developer who <br />flutter around!
+              </span>
             </div>
           </div>
           <div class="sitestart__skills-wrap">
             <div class="sitestart-skills">
               <span class="title">My Main Skills</span>
-              <div class="column skills-list">
-                <div class="column skills-item">
-                  <span class="skills__item-title">Kekium</span>
-                  <div class="bar"><div class="ovrflw blue"></div></div>
-                </div>
-                <div class="column skills-item">
-                  <span class="skills__item-title">UI/UX Design</span>
-                  <div class="bar"><div class="ovrflw green"></div></div>
-                </div>
-                <div class="column skills-item">
-                  <span class="skills__item-title">Vue</span>
-                  <div class="bar"><div class="ovrflw orange"></div></div>
-                </div>
-              </div>
+              <SiteStartSkills />
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
+import SiteStartSkills from "./SiteStartSkills.vue";
 export default {
   name: "SiteStart",
+  components: { SiteStartSkills },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/css/_Variables.scss";
+@import "../assets/css/_Main.scss";
 
 #SiteStart {
-  height: 570px;
+  height: 500px;
   font-family: $fontint;
   margin-top: 100px;
 }
@@ -91,6 +82,7 @@ export default {
 }
 
 .sitestart-right {
+  color: $black !important;
   width: 40%;
   min-height: 450px;
   z-index: 1;
@@ -100,7 +92,7 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  border: 4px dashed #027dfd;
+  border: 2px dashed #027dfd;
   border-radius: 100%;
   padding: 40px;
 
@@ -157,52 +149,6 @@ export default {
   & .title {
     font-size: 14px;
     line-height: 21px;
-  }
-}
-
-.skills-list {
-  margin-top: 20px;
-}
-
-.skills-item {
-  margin-bottom: 20px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  & span {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 0.3px;
-  }
-
-  & .bar {
-    margin-top: 5px;
-    width: 170px;
-    height: 4px;
-    background: #e9e9e9;
-  }
-  & .ovrflw {
-    width: 100%;
-    height: 100%;
-    background: $black;
-
-    &.blue {
-      width: 95%;
-      background: $blue;
-    }
-
-    &.green {
-      width: 30%;
-      background: $green;
-    }
-
-    &.orange {
-      width: 10%;
-      background: $orange;
-    }
   }
 }
 
