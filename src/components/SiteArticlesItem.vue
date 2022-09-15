@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="column aifs sitearticles-item">
     <a class="sitearticles__img-wrap">
-      <img :src="require('../assets/images/SiteArticles/example1.png')" />
+      <img :src="require(`../assets/images/SiteArticles/${img}`)" />
       <a class="minread">{{ minread }} read</a>
     </a>
     <div class="sitearticles__txt-wrap">
@@ -22,8 +22,8 @@ export default {
   name: "SiteArticlesItem",
   props: {
     img: {
-      type: Image,
-      default: require("../assets/images/SiteArticles/example1.png"),
+      type: String,
+      default: "example1.png",
     },
     minread: {
       type: String,
@@ -49,17 +49,14 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../assets/css/_Main.scss";
-
-.sitearticles-main {
-  margin-bottom: 60px;
-}
 
 .sitearticles__img-wrap {
   position: relative;
   display: flex;
   width: fit-content;
+  margin: 0 auto 10px;
 }
 .minread {
   color: $white !important;
@@ -76,43 +73,41 @@ export default {
     background: rgba(0, 0, 0, 0.7);
   }
 }
-
 .sitearticles__txt-wrap {
-  width: 55%;
-}
-.themedate {
-  opacity: 0.8;
-}
-.date {
-  text-transform: uppercase;
-}
-h3 {
-  margin: 10px 0;
-}
-p {
-  text-align: justify;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 26px;
-  letter-spacing: 0.5px;
+  width: 100%;
 }
 
-.sitearticles__others-item {
+.sitearticles-item {
   width: 45%;
 
-  & .sitearticles__txt-wrap,
-  & .sitearticles__img-wrap {
-    width: 100%;
+  & .themedate {
+    opacity: 0.8;
+  }
+  & .date {
+    text-transform: uppercase;
+  }
+  & h3 {
+    margin: 10px 0;
+  }
+  & p {
+    text-align: justify;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0.5px;
   }
 
-  & .sitearticles__img-wrap {
-    margin-bottom: 10px;
+  &:first-child {
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 60px;
 
-    & img {
-      margin: auto;
+    & .sitearticles__img-wrap {
+      margin: 0 0 10px;
     }
-    & .minread {
-      right: 95px;
+
+    & .sitearticles__txt-wrap {
+      width: 55%;
     }
   }
 }
