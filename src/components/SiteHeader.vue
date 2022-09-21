@@ -37,6 +37,7 @@ export default {
 @import "../assets/css/_Main.scss";
 
 #SiteHeader {
+  margin-top: 0;
   padding-top: 30px;
   font-family: $fontnoto;
   font-size: 20px;

@@ -3,6 +3,9 @@
     <SiteHeader @themeChanged="ThemeChange" />
     <SiteStart />
     <SiteArticles />
+    <SiteProjects />
+    <SiteHire />
+    <SiteFooter />
   </div>
 </template>
 
@@ -10,13 +13,19 @@
 import SiteStart from "./components/SiteStart.vue";
 import SiteHeader from "./components/SiteHeader.vue";
 import SiteArticles from "./components/SiteArticles.vue";
+import SiteProjects from "./components/SiteProjects.vue";
+import SiteHire from "./components/SiteHire.vue";
+import SiteFooter from "./components/SiteFooter.vue";
 
 export default {
   name: "App",
   components: {
     SiteStart,
     SiteHeader,
-    SiteArticles
+    SiteArticles,
+    SiteProjects,
+    SiteHire,
+    SiteFooter
 },
   data() {
     return {

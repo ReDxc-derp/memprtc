@@ -24,6 +24,10 @@ div {
   position: relative;
 }
 
+section, footer {
+  margin-top: 130px;
+}
+
 h1 {
   font-size: 54px;
   font-weight: 700;
@@ -147,6 +151,65 @@ a {
     font-weight: 500;
     line-height: 27px;
     opacity: 0.6;
+  }
+}
+
+.linkimg-wrap {
+  position: relative;
+  display: flex;
+  width: fit-content;
+}
+.linktag-btn {
+  color: $white !important;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+
+  &.solo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .linkimg-wrap:hover &.solo {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.tags {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  gap: 10px;
+
+  & a:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.txt-wrap {
+  width: 100%;
+}
+.mainarticproj-item {
+  filter: drop-shadow(0px 24px 34px rgba(199, 201, 217, 0.5));
+
+  & .themedate {
+    opacity: 0.8;
+  }
+  & .date {
+    text-transform: uppercase;
+  }
+  & h3 {
+    margin: 10px 0;
+  }
+  & p {
+    text-align: justify;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0.5px;
   }
 }
 

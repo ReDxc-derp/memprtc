@@ -47,9 +47,7 @@ export default {
 @import "../assets/css/_Main.scss";
 
 #SiteStart {
-  height: 500px;
   font-family: $fontint;
-  margin-top: 100px;
 }
 
 .sitestart-left {
