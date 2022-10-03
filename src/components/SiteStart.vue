@@ -10,7 +10,7 @@
             remotely!<br />If you'd like to help/work with me, Let's get in
             touch!
           </p>
-          <a href="#" class="link-btn">Say Hello!</a>
+          <a class="link-btn">Say Hello!</a>
         </div>
         <div class="sitestart-right">
           <div class="sitestart__img-wrap">

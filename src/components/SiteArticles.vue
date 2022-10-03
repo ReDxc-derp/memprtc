@@ -3,18 +3,20 @@
     <div class="wrapper wrapper_sitearticles">
       <div class="row latestrow articles">
         <span class="latest-title">Latest Articles</span>
-        <a class="link latest-seeall">See all</a>
+        <router-link to="/blog">
+          <a class="link latest-seeall">See all</a>
+        </router-link>
       </div>
-      <ArticlesBlock />
+      <ArticlesAll :limit="3" />
     </div>
   </section>
 </template>
 
 <script>
-import ArticlesBlock from "./ArticlesBlock.vue";
+import ArticlesAll from "./Pages/Blog/ArticlesAll.vue";
 export default {
   name: "SiteArticles",
-  components: { ArticlesBlock },
+  components: { ArticlesAll },
 };
 </script>
 

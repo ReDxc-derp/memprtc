@@ -1,8 +1,10 @@
 <template>
   <div class="column aifs mainarticproj-item sitearticles-item">
     <a class="linkimg-wrap sitearticles__img-wrap">
-      <img :src="require(`../assets/images/SiteArticles/${img}`)" />
-      <a class="linktag-btn solo">{{ minread }} read</a>
+      <router-link to="/blog/article" style="width: 100%">
+        <img :src="require(`../assets/images/SiteArticles/${img}`)" />
+      </router-link>
+      <a class="linktag-btn solo" v-if="minread">{{ minread }} read</a>
       <slot></slot>
     </a>
     <div class="txt-wrap sitearticles__txt-wrap">
@@ -10,9 +12,11 @@
         <span class="theme">{{ theme }}</span>
         <span class="date">{{ date }}</span>
       </div>
-      <h3>
-        <a class="link" v-html="title"></a>
-      </h3>
+      <router-link to="/blog/article">
+        <h3>
+          <a class="link" v-html="title"></a>
+        </h3>
+      </router-link>
       <p v-html="desc"></p>
     </div>
   </div>
@@ -24,27 +28,27 @@ export default {
   props: {
     img: {
       type: String,
-      default: "example1.png",
+      default: "example2.png",
     },
     minread: {
       type: String,
-      default: "KeK",
+      default: "some mins",
     },
     title: {
       type: String,
-      default: "KeK",
+      default: "Example title",
     },
     theme: {
       type: String,
-      default: "KeK",
+      default: "any theme",
     },
     date: {
       type: String,
-      default: "KeK",
+      default: "00 may 2022",
     },
     desc: {
       type: String,
-      default: "KeK",
+      default: "some desc",
     },
   },
 };
@@ -53,29 +57,5 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/css/_Main.scss";
 
-.sitearticles__img-wrap {
-  margin: 0 auto 10px;
-}
-
-.sitearticles-item {
-  width: 45%;
-
-  &:first-child {
-    flex-direction: row;
-    width: 100%;
-    margin-bottom: 60px;
-
-    & .sitearticles__img-wrap {
-      margin: 0;
-    }
-
-    & .sitearticles__txt-wrap {
-      width: 55%;
-    }
-  }
-
-  & .tags {
-    top: 50px;
-  }
-}
+@import "@/assets/css/_Responsive.scss";
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="row tags">
-    <a class="linktag-btn" v-for="(item, index) in listitems" :key="index">
+  <div class="row tags" v-if="tagitems && tagitems.length > 0">
+    <a class="linktag-btn" v-for="(item, index) in tagitems" :key="index">
       {{ item }}
     </a>
   </div>
@@ -9,7 +9,13 @@
 <script>
 export default {
   props: {
-    listitems: Array,
+    tagitems: Array,
+  },
+  computed: {
+    latestTags() {
+      if (this.limit) return this.tagitems.slice(0, this.limit);
+      return this.tagitems;
+    },
   },
 };
 </script>

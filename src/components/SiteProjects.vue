@@ -3,7 +3,9 @@
     <div class="wrapper wrapper_siteprojects">
       <div class="row latestrow projects">
         <span class="latest-title">Latest Projects</span>
-        <a class="link latest-seeall">See all</a>
+        <router-link to="/project">
+          <a class="link latest-seeall">See all</a>
+        </router-link>
       </div>
       <ProjectsBlock />
     </div>

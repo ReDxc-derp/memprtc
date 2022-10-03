@@ -2,11 +2,11 @@
   <div class="column skills-list">
     <SiteStartSkillsItem
       title="Kekium + Memes"
-      endPercent="100"
+      :endPercent=100
       color="#027DFD"
     />
-    <SiteStartSkillsItem title="HTMLCSS" endPercent="60" color="#A9DC3C" />
-    <SiteStartSkillsItem title="Vue JS" endPercent="10" color="#E49115" />
+    <SiteStartSkillsItem title="HTMLCSS" :endPercent=60 color="#A9DC3C" />
+    <SiteStartSkillsItem title="Vue JS" :endPercent=10 color="#E49115" />
     <SiteStartSkillsItem />
   </div>
 </template>

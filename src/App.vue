@@ -1,32 +1,12 @@
 <template>
   <div id="app" :class="{ light: isActive }">
-    <SiteHeader @themeChanged="ThemeChange" />
-    <SiteStart />
-    <SiteArticles />
-    <SiteProjects />
-    <SiteHire />
-    <SiteFooter />
+    <router-view @themeChanged="ThemeChange"></router-view>
   </div>
 </template>
 
 <script>
-import SiteStart from "./components/SiteStart.vue";
-import SiteHeader from "./components/SiteHeader.vue";
-import SiteArticles from "./components/SiteArticles.vue";
-import SiteProjects from "./components/SiteProjects.vue";
-import SiteHire from "./components/SiteHire.vue";
-import SiteFooter from "./components/SiteFooter.vue";
-
 export default {
   name: "App",
-  components: {
-    SiteStart,
-    SiteHeader,
-    SiteArticles,
-    SiteProjects,
-    SiteHire,
-    SiteFooter
-},
   data() {
     return {
       isActive: false,
@@ -47,15 +27,12 @@ export default {
   font-family: $fontint;
   color: $white;
   background-color: #27323e;
-
   &.light {
     color: $black;
     background-color: $white;
   }
-
   & a {
     color: $white;
-
     &.link:hover,
     &.link:active,
     &.link:focus {
@@ -64,7 +41,6 @@ export default {
   }
   &.light a {
     color: $black;
-
     &.link:hover,
     &.link:active,
     &.link:focus {

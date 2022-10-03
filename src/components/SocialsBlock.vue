@@ -73,6 +73,10 @@ export default {
       width: 24px;
       height: 24px;
     }
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 </style>

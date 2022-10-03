@@ -2,11 +2,19 @@
   <section id="SiteHeader">
     <div class="wrapper wrapper_header">
       <div class="row row_header">
-        <a href="#" class="headerlogo">kek ReDxc memes</a>
+        <router-link to="/">
+          <a class="headerlogo">kek ReDxc memes</a>
+        </router-link>
         <nav class="row nav_header">
-          <a href="#" class="link">About</a>
-          <a href="#" class="link">Articles</a>
-          <a href="#" class="link">Projects</a>
+          <router-link to="/about">
+            <a class="link">About</a>
+          </router-link>
+          <router-link to="/blog">
+            <a class="link">Articles</a>
+          </router-link>
+          <router-link to="/project">
+            <a class="link">Projects</a>
+          </router-link>
           <div class="row aic nav-icons">
             <a>
               <div class="icon search exc"></div>

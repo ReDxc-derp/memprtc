@@ -39,8 +39,4 @@ export default {
 .siteprojects__img-wrap {
   margin: 0 auto 10px;
 }
-
-.siteprojects-item {
-  width: 30%;
-}
 </style>
